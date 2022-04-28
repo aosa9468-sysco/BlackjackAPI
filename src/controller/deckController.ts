@@ -28,8 +28,10 @@ export let openDeck = (req: Request, res: Response) => {
 export let drawCard = async (req: Request, res: Response) => {
     const filter = {deckId: req.params.deckId};
     let deck = await Deck.findOne({deckId: req.params.deckId});
-    let cards = removeCards(deck.cards,Number(req.params.noOfCards));
-    const update = {cards: cards, remaining: deck.remaining - Number(req.params.noOfCards)}
+    let cardObj = removeCards(deck.cards,Number(req.params.noOfCards));
+    let remainingCards = cardObj.remaining;
+    let cards = cardObj.draw;
+    const update = {cards: remainingCards, remaining: deck.remaining - Number(req.params.noOfCards)}
     let updatedDeck = Deck.updateOne(filter,update, (err: any,deck:any) => {
         if (err) {
           res.send(err);

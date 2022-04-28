@@ -17,7 +17,52 @@ Please follow the below steps to execute Blackjack API.
 
 ### Blackjack API
 
-#### Create New Deck
+1. Create New Deck
+
+    #### Request
+    ```
+    /createDeck
+    ```
+    #### Method
+        POST
+
+    #### Sample Request Body
+    ```
+    {
+    "type": "FULL",
+    "shuffled": false
+    }
+    ```
+
+    #### Sample Response
+    ![Create New Deck](src/figures/createDeck.png)
+
+2. Open Deck
+
+    #### Request
+    ```
+    /openDeck/:DeckId
+    ```
+    #### Method
+        GET
+
+    #### Sample Response
+    ![Open Deck](src/figures/openDeck.png)
+
+3. Draw Cards
+
+    #### Request
+    ```
+    /drawCards/deckId/:DeckId/noOfCards/:NoOfCards
+    ```
+    #### Method
+        PATCH
+
+    #### Sample Response
+    ![Draw Cards](src/figures/drawCards.png)
+
+
+
 
 
 

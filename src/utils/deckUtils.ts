@@ -60,7 +60,7 @@ export const shuffleCards = (cards: { value: string; suit: string; code: string;
 }
 
 export const removeCards = (cards,num: number) => {
-    cards.splice(0,num);
-    return cards;
+    let drawCards = cards.splice(0,num);
+    return {draw: drawCards, remaining: cards };
     
 }
