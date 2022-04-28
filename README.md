@@ -14,6 +14,10 @@ Please follow the below steps to execute Blackjack API.
     ```
     yarn start
     ```
+4. Run tests
+    ```
+    yarn test
+    ```
 
 ### Blackjack API
 

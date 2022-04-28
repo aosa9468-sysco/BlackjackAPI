@@ -16,7 +16,3 @@ export const modifyDeckResponse = (deck: Deck & { _id: any; }) => {
     console.info(`Create a new Deck. DeckId:${deckResponse.deckId}`);
     return deckResponse;
 }
-
-export const drawCardsfromDeck = (deck) => {
-
-}
